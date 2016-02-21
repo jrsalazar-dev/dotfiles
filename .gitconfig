@@ -1,0 +1,23 @@
+# This is Git's per-user configuration file.
+[core]
+# Please adapt and uncomment the following lines:
+	user = Jordan Salazar
+	email = jordan@noprotocol.com
+	mergeoptions = --no-edit
+[user]
+	name = Jordan Salazar
+	email = jordan@noprotocol.com
+[push]
+	default = matching
+	followTags = true
+[rerere]
+	enabled = true
+
+[gitflow "prefix"]
+    feature = feature/
+    release = release/
+    hotfix = hotfix/
+    support = 
+    versiontag = v
+[pull]
+	default = simple

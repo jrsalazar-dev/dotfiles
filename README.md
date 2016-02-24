@@ -1,1 +1,1 @@
-## Home folder dotfiles for quick setup
+### Home folder dotfiles for quick setup

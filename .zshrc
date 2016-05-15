@@ -97,9 +97,6 @@ eval "$(dircolors ~/.dir_colors)"
 
 fortune -o | cowsay -f 'skeleton.cow'
 
-BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-
 eval "$(thefuck --alias)"
 
 alias mysql=$(echo -e 'mysql --prompt="\x1B[31m\\u\x1B[34m@\x1B[32m\\h\x1B[0m:\x1B[36m\\d>\x1B[0m "')

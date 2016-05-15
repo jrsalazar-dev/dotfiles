@@ -1,9 +1,6 @@
-# Correctly display UTF-8 with combining characters.
-if [ "$TERM_PROGRAM" = "Apple_Terminal"  ]; then
-    setopt combiningchars
-fi
+setopt combiningchars
 
-alias vim='/usr/local/bin/nvim'
+alias vim='/usr/bin/nvim'
 
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="ys"
@@ -12,10 +9,9 @@ ZSH_THEME="ys"
 alias zshconfig="vim ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 
-plugins=(git osx bower brew npm composer gitfast rvm sublime history history-substring-search terminalapp laravel5 laravel4 colorize zsh-syntax-highlighting)
+plugins=(git arch bower npm composer gitfast rvm history history-substring-search terminalapp laravel5 laravel4 colorize zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-. ~/.nvm/nvm.sh
 
 # User configuration
 ## Git aliases
@@ -62,13 +58,12 @@ alias {b-unin,b-uninstall}='bower uninstall --save'
 alias {b-reg,b-register}='bower register'
 
 ## tmux
-alias tmuxgo='tmux new-session \; split-window \; split-window \; select-layout main-vertical \; resize-pane -t:.0 -x 125'
 alias tsp='tmux select-pane '
 alias tsfp='tmux select-pane -t:.0'
 alias tkill='tmux kill-server'
 
 ## Misc
-alias ls='/usr/local/bin/gls --color -h --group-directories-first'
+alias ls='ls --color -h --group-directories-first'
 alias mv='mv -v'
 alias cp='cp -Rv'
 alias bc='bc -l'
@@ -77,29 +72,26 @@ alias chrome='open -a "Google Chrome"'
 alias ff='open -a "Firefox"'
 alias safari='open -a "Safari"'
 alias 777='chmod -R 777'
-alias dns-flush='dscacheutil -flushcache'
-alias show-hidden='defaults write com.apple.finder AppleShowAllFiles TRUE'
-alias hide-hidden='defaults write com.apple.finder AppleShowAllFiles FALSE'
-alias show-full-path='defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES'
-alias keta='ssh ketamine@keta.ip'
-alias httpdconfig='sudo vim /private/etc/apache2/httpd.conf'
 alias vimconfig='vim ~/.config/nvim/rc'
 alias tobottom='TOLASTLINE=$(tput cup "$LINES");PS1="\[$TOLASTLINE\]$PS1"'
 alias gulp-persist='while true; do gulp; sleep 3; done;'
 alias flac-to-m4a='for f in *.flac; do ffmpeg -i "$f"  -vf "crop=((in_w/2)*2):((in_h/2)*2)" -c:a alac "${f%.flac}.m4a"; done'
 alias phpconfig='vim /usr/local/etc/php/5.6/php.ini'
+alias open='xdg-open'
+alias steam-wine='wine ~/.wine/drive_c/Steam/Steam.exe'
 
 export GEM_HOME=~/.gem
 export GEM_PATH=~/.gem
 
-
 export APPLICATION_ENV="development"
 
 export EDITOR='vim'
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin:$PATH:$GEM_HOME/bin"
-export CDPATH='.:/Users/jordansalazar:/Users/jordansalazar/www'
+export PATH="$PATH:$GEM_HOME/bin:$HOME/.node_modules/bin"
+export CDPATH='.:/home/jrs:/home/jrs/www'
 export COWPATH="$HOME/.cowsay"
-export ZDOTDIR='/Users/jordansalazar'
+export ZDOTDIR='/home/jrs'
+
+export npm_config_prefix=~/.node_modules
 
 eval "$(dircolors ~/.dir_colors)"
 
@@ -110,6 +102,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
 
 eval "$(thefuck --alias)"
 
-source "`brew --prefix`/etc/grc.bashrc"
 alias mysql=$(echo -e 'mysql --prompt="\x1B[31m\\u\x1B[34m@\x1B[32m\\h\x1B[0m:\x1B[36m\\d>\x1B[0m "')
+
+task list
 

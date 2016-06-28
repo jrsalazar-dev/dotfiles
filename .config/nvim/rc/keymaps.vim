@@ -30,10 +30,10 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 
-nnoremap ∆ <C-W><C-J>
-nnoremap ˚ <C-W><C-K>
-nnoremap ¬ <C-W><C-L>
-nnoremap ˙ <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 nnoremap <C-p> :FZF<CR>
 
@@ -46,7 +46,7 @@ nnoremap + :exe "vertical resize +10"<CR>
 nnoremap - :exe "vertical resize -10"<CR>
 
 vnoremap <tab> > 
-vnoremap  <S-tab> < 
+vnoremap <S-tab> < 
 
 inoremap <tab> <Esc> `^
 
@@ -69,5 +69,8 @@ let g:multi_cursor_quit_key='<Esc>'
 
 let g:fzf_command_prefix='fzf'
 
-nnoremap π :call pdv#DocumentWithSnip()<CR>
+nnoremap <C-o> :call pdv#DocumentWithSnip()<CR>
 nnoremap ø :exe "JsDoc"<CR>
+
+nnoremap <C-e> <C-y><leader>
+inoremap <C-e> <C-y><leader>

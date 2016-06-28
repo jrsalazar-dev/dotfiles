@@ -2,6 +2,7 @@
 " Vim opts
 " -----------------------------------------------------------------------------
 set modelines=0
+set encoding=utf8
 
 set tabstop=4
 set shiftwidth=4
@@ -29,6 +30,8 @@ set number
 set splitbelow
 set splitright
 set foldmethod=indent
+set foldlevel=20
+set foldlevelstart=20
 set cursorline
 set linebreak
 
@@ -36,10 +39,10 @@ set linebreak
 "execute WatchForChanges("*",autoreadargs) 
 
 set noswapfile
-set dir=~/.vim/tmp
+set dir=~/.config/nvim/tmp
 set backup
-set backupdir=~/.vim/tmp
-set directory=~/.vim/tmp
+set backupdir=~/.config/nvim/tmp
+set directory=~/.config/nvim/tmp
 set writebackup
 
 set undofile

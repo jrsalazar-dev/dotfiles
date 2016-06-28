@@ -51,8 +51,9 @@ let g:neomake_open_list = 0
 let g:jsx_ext_required = 0
 
 " Php doc generator 
-let g:pdv_template_dir = '/Users/jordansalazar/.vim/bundle/pdv/templates_snip'
+let g:pdv_template_dir = '/home/jrs/.config/nvim/Plug/pdv/templates_snip'
 
 "Deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
+

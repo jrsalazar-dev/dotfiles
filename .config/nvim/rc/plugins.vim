@@ -42,6 +42,8 @@ Plug 'benekastah/neomake'
 Plug 'airblade/vim-gitgutter'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'djoshea/vim-autoread'
+Plug 'suan/vim-instant-markdown'
+Plug 'wlangstroth/vim-racket'
 
 call plug#end()
 

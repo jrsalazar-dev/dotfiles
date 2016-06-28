@@ -1,3 +1,4 @@
+# Correctly display UTF-8 with combining characters.
 setopt combiningchars
 
 alias vim='/usr/bin/nvim'
@@ -78,7 +79,7 @@ alias gulp-persist='while true; do gulp; sleep 3; done;'
 alias flac-to-m4a='for f in *.flac; do ffmpeg -i "$f"  -vf "crop=((in_w/2)*2):((in_h/2)*2)" -c:a alac "${f%.flac}.m4a"; done'
 alias phpconfig='vim /usr/local/etc/php/5.6/php.ini'
 alias open='xdg-open'
-alias steam-wine='wine ~/.wine/drive_c/Steam/Steam.exe'
+alias steam-wine='wine ~/.wine/drive_c/Steam/Steam.exe -no-cef-sandbox'
 
 export GEM_HOME=~/.gem
 export GEM_PATH=~/.gem

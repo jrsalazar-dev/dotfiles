@@ -30,10 +30,10 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap ∆ <C-W><C-J>
+nnoremap ˚ <C-W><C-K>
+nnoremap ¬ <C-W><C-L>
+nnoremap ˙ <C-W><C-H>
 
 nnoremap <C-p> :FZF<CR>
 

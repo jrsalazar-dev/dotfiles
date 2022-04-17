@@ -37,8 +37,6 @@ local function on_attach(client, bufnr)
   vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
   vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -55,9 +53,6 @@ local function on_attach(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   vim.cmd [[autocmd! CursorHold * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor",header=""})]]
-
-  -- vim.lsp.diagnostic.
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
   if client.resolved_capabilities.document_formatting then
     vim.cmd(
@@ -81,16 +76,6 @@ local function on_attach(client, bufnr)
   vim.lsp.handlers["callHierarchy/incomingCalls"] = require'fzf_lsp'.incoming_calls_handler
   vim.lsp.handlers["callHierarchy/outgoingCalls"] = require'fzf_lsp'.outgoing_calls_handler
 
-  -- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  --   vim.lsp.diagnostic.on_publish_diagnostics, {
-  --     -- disable virtual text
-  --     virtual_text = { severity = vim.diagnostic.severity.ERROR },
-  --
-  --     -- show signs
-  --     signs = true,
-  --   }
-  -- )
-  -- vim.lsp.handlers['textDocument/definition'] = goto_definition('vsplit')
   vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
       underline = true,
@@ -111,27 +96,8 @@ local function on_attach(client, bufnr)
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
   end
-  -- Null-ls
-  -- local null_ls = require("null-ls")
-  -- null_ls.setup({
-  --     sources = {
-  --         null_ls.builtins.diagnostics.eslint,
-  --         null_ls.builtins.code_actions.eslint,
-  --         null_ls.builtins.formatting.prettier
-  --     },
-  --     on_attach = on_attach
-  -- })
 
   local enhance_server_opts = {
-    -- Provide settings that should only apply to the "eslintls" server
-    -- ["tsserver"] = function(opts)
-    --   opts.settings = {
-    --     format = {
-    --       enable = false,
-    --     },
-    --   }
-    --   return opts
-    -- end,
     ["stylelint_lsp"] = function(opts)
       opts.settings = {
         format = {
@@ -146,16 +112,6 @@ local function on_attach(client, bufnr)
       }
       return opts
     end,
-    -- ["null_ls"] = function(opts)
-    --   local null_ls = require("null-ls")
-    --   opts.settings = {
-    --     sources = {
-    --       null_ls.builtins.diagnostics.eslint,
-    --       null_ls.builtins.code_actions.eslint,
-    --       null_ls.builtins.formatting.prettier
-    --     },
-    --   }
-    -- end
   }
 
   lsp_installer.on_server_ready(function(server)

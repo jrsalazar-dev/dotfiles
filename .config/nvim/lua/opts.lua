@@ -2,16 +2,6 @@ local vim = vim
 
 vim.cmd[[colorscheme dracula]]
 -- vim.cmd([[ autocmd ColorScheme * :lua require('vim.lsp.diagnostic')._define_default_signs_and_highlights() ]])
--- vim.api.nvim_exec([[
--- augroup FormatAutogroup
---   autocmd!
---   autocmd BufWritePre *.ts,*.js,*.tsx,*.scss,*.html,*.lua FormatWrite
--- augroup END
--- ]], true)
-
--- vim.lsp.
-
-vim.lsp.set_log_level(4)
 
 vim.opt.confirm = false
 vim.opt.updatetime = 300

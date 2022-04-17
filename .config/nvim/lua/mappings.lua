@@ -40,9 +40,10 @@ nnoremap("N", "Nzz")
 nnoremap("*", "*zz")
 nnoremap("#", "#zz")
 
-nnoremap("<C-d>", "<C-n>")
+nnoremap('\\', ":Neotree reveal<CR>")
 
 vim.cmd([[  au TextYankPost * silent! lua vim.highlight.on_yank() ]])
+
 
 vim.cmd([[
   augroup PrettierWrite

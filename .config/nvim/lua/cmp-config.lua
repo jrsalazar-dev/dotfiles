@@ -1,11 +1,18 @@
 -- Setup completion
 local cmp = require'cmp'
+local luasnip = require("luasnip")
+local lspkind = require('lspkind')
+
+-- Setup lspconfig.
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+-- Util function used to see if characters are in front of the cursor
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-local luasnip = require("luasnip")
+-- Tab mapping for completion
 local function tab(fallback)
   if cmp.visible() then
     cmp.select_next_item()
@@ -19,6 +26,7 @@ local function tab(fallback)
   end
 end
 
+-- Shift-tab mapping for completion
 local function shtab(fallback)
   if cmp.visible() then
     cmp.select_prev_item()
@@ -30,6 +38,7 @@ local function shtab(fallback)
   end
 end
 
+-- Enter mapping for completion
 local function enterit(fallback)
   if cmp.visible() and cmp.get_selected_entry() then
     cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false  })
@@ -40,20 +49,14 @@ local function enterit(fallback)
 end
 
 cmp.setup({
-  -- experimental = {
-  --   ghost_text = true,
-  --   native_menu = false
-  -- },
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-      -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
   mapping = {
-    -- ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+    ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ['<C-e>'] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
@@ -103,15 +106,11 @@ cmp.setup.cmdline(':', {
   })
 })
 
--- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-local lspkind = require('lspkind')
 cmp.setup {
   formatting = {
     format = lspkind.cmp_format({
       mode = 'text_symbol', -- show only symbol annotations
-      -- maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
       -- The function below will be called before any actual modifications from lspkind
       -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))

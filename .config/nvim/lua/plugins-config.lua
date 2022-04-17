@@ -43,27 +43,6 @@ require('Comment').setup()
 -- Bufferline
 require("bufferline").setup{}
 
--- Formatter
--- local run_prettier = function()
---   return {
---     exe = "prettier",
---     args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
---     stdin = true
---   }
--- end
-
-
--- require('formatter').setup({
---   filetype = {
---     typescriptreact = { run_prettier },
---     typescript = { run_prettier },
---     json = { run_prettier },
---     css = { run_prettier },
---     html = { run_prettier },
---     javascript = { run_prettier },
---   }
--- })
-
 require('fzf_lsp').setup()
 
 -- Treesitter (syntax)
@@ -235,5 +214,3 @@ require("neo-tree").setup({
     }
   }
 })
-
-vim.cmd([[nnoremap \ :Neotree reveal<cr>]])

@@ -1,0 +1,31 @@
+	# This is Git's per-user configuration file.
+[user]
+	# Please adapt and uncomment the following lines:
+	name = jrsalazar
+	email = jrsalazar.dev@hey.com
+	signingKey = 5FD3B7F6FEA0B5BA
+[push]
+	default = simple
+[core]
+	excludesfile = /Users/jrs/.gitignore
+	pager = delta
+[pull]
+	rebase = true
+	default = matching
+[color]
+	ui = true
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	features = line-numbers decorations
+	colorMoved = default
+	syntax-theme = Dracula
+	minus-style = syntax "#401817"
+	plus-style = syntax "#162b1a"
+[commit]
+	gpgsign = true
+[versionsort]
+	suffix = "-alpha"
+	suffix = "-beta"
+	suffix = "-rc"
+	suffix = ""

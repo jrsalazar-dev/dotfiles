@@ -1,0 +1,39 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "prisma",
+    "xml",
+    "scss",
+    "css",
+    "html",
+    "markdown"
+  ],
+  "eslint.packageManager": "yarn",
+  "git.showCommitInFloating": true,
+  "git.addGBlameToVirtualText": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "tabnine.priority": 50,
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        },
+        "highlight": { "lsRanges": true }
+      }
+    }
+  }
+}

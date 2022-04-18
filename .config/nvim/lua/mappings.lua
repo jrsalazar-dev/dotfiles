@@ -9,8 +9,8 @@ local inoremap = Utils.inoremap
 -- local nmap = Utils.nmap
 -- local xmap = Utils.xmap
 
-vim.g.mapleader = ","
-vim.g.maplocalleader = ","
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 nnoremap("<space>", "/")
 

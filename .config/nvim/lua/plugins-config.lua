@@ -1,23 +1,3 @@
--- Telescope
--- require('telescope').setup{
---   defaults = {
-    -- Default configuration for telescope goes here:
-    -- config_key = value,
---     mappings = {
-  --     i = {
-        -- map actions.which_key to <C-h> (default: <C-/>)
-        -- actions.which_key shows the mappings for your picker,
-        -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-        -- ["<C-h>"] = "which_key",
-    --     ["<C-j>"] = require('telescope.actions').move_selection_next,
-      --   ["<C-k>"] = require('telescope.actions').move_selection_previous,
-        -- ["<C-n>"] = require('telescope.actions').cycle_history_next,
-        -- ["<C-p>"] = require('telescope.actions').cycle_history_prev,
-      -- }
-    -- }
-  -- }
--- }
-
 -- Autopairs
 local npairs = require'nvim-autopairs'
 local Rule   = require'nvim-autopairs.rule'
@@ -218,7 +198,7 @@ require("neo-tree").setup({
         ["<bs>"] = "navigate_up",
         ["."] = "set_root",
         ["H"] = "toggle_hidden",
-        ["/"] = "fuzzy_finder",
+        -- ["/"] = "fuzzy_finder",
         ["f"] = "filter_on_submit",
         ["<c-x>"] = "clear_filter",
       }

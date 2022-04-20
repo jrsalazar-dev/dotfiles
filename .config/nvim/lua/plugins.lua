@@ -11,37 +11,29 @@ vim.cmd([[
 
 return require('packer').startup({
   function(use)
-    use 'tpope/vim-repeat'
-    use 'tpope/vim-surround'
-    use 'Mofiqul/dracula.nvim'
-    use 'xiyaowong/nvim-transparent'
-    use 'wbthomason/packer.nvim'
+    use { 'tpope/vim-repeat' }
+    use { 'tpope/vim-surround' }
+    use { 'Mofiqul/dracula.nvim' }
+    use { 'xiyaowong/nvim-transparent' }
+    use { 'wbthomason/packer.nvim' }
     use { 'junegunn/fzf', run = './install --bin' }
     use { 'RRethy/nvim-treesitter-endwise' }
     use { 'windwp/nvim-ts-autotag' }
     use { "editorconfig/editorconfig-vim" }
     use { 'ibhagwan/fzf-lua',
-    use { 'gfanto/fzf-lsp.nvim' },
       -- optional for icon support
       requires = { 'kyazdani42/nvim-web-devicons' }
     }
 
-    use { 'onsails/lspkind-nvim' }
-
     use { 'prettier/vim-prettier'}
 
     -- LSP
-    use 'neovim/nvim-lspconfig'
-    use 'williamboman/nvim-lsp-installer'
-    -- use 'mhartington/formatter.nvim'
+    use { 'neovim/nvim-lspconfig' }
+    use { 'gfanto/fzf-lsp.nvim' }
+    use { 'onsails/lspkind-nvim' }
+    use { 'williamboman/nvim-lsp-installer' }
 
-    -- Telescope
     use 'nvim-lua/plenary.nvim'
-    -- use {
-    --   'nvim-telescope/telescope.nvim',
-    --   requires = { {'nvim-lua/plenary.nvim'} }
-    -- }
-    -- use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     -- Completion
     use { 'hrsh7th/vim-vsnip' }
@@ -52,8 +44,8 @@ return require('packer').startup({
     use { 'hrsh7th/cmp-path' }
     use { 'hrsh7th/cmp-cmdline' }
     use { 'hrsh7th/cmp-nvim-lua' }
-    use 'hrsh7th/cmp-nvim-lsp-signature-help'
-    use 'hrsh7th/cmp-nvim-lsp-document-symbol'
+    use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
+    use { 'hrsh7th/cmp-nvim-lsp-document-symbol' }
     use {
       'David-Kunz/cmp-npm',
       requires = {
@@ -62,7 +54,7 @@ return require('packer').startup({
     }
 
 
-    use 'kyazdani42/nvim-web-devicons'
+    use { 'kyazdani42/nvim-web-devicons' }
 
     use {
       'nvim-lualine/lualine.nvim'
@@ -73,13 +65,6 @@ return require('packer').startup({
     use { 'voldikss/vim-floaterm' }
     use { 'vim-test/vim-test' }
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-    -- use {
-    --   'goolord/alpha-nvim',
-    --   requires = { { 'kyazdani42/nvim-web-devicons' } },
-    --   config = function ()
-    --     require'alpha'.setup(require'alpha.themes.dashboard'.config)
-    --   end
-    -- }
     use {
       'numToStr/Comment.nvim'
     }
@@ -99,11 +84,11 @@ return require('packer').startup({
       'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate'
     }
-    use 'rcarriga/nvim-notify'
-    use 'antoinemadec/FixCursorHold.nvim'
+    use { 'rcarriga/nvim-notify' }
+    use { 'antoinemadec/FixCursorHold.nvim' }
 
-    use 'windwp/nvim-autopairs'
-    use 'nvim-lua/popup.nvim'
+    use { 'windwp/nvim-autopairs' }
+    use { 'nvim-lua/popup.nvim' }
   end,
   config = {
     display = {

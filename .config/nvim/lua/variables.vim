@@ -1,8 +1,6 @@
 
 let g:nvim_tree_special_files = {}
 
-autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
-
 hi Normal ctermbg=NONE guibg=NONE
 hi NonText ctermbg=NONE guibg=NONE
 hi LineNr ctermfg=NONE ctermbg=NONE guibg=NONE

@@ -48,6 +48,6 @@ vim.cmd([[  au TextYankPost * silent! lua vim.highlight.on_yank() ]])
 vim.cmd([[
   augroup PrettierWrite
     autocmd!
-    autocmd BufWritePre *.jsx,*.js,*.scss,*.css,*.html,*.tsx,*.ts Prettier
+    autocmd BufWritePre *.json,*.jsx,*.js,*.scss,*.css,*.html,*.tsx,*.ts Prettier
   augroup end
 ]])

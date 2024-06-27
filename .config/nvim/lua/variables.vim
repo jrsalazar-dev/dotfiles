@@ -6,6 +6,11 @@ hi NonText ctermbg=NONE guibg=NONE
 hi LineNr ctermfg=NONE ctermbg=NONE guibg=NONE
 hi Folded ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
+hi! EndOfBuffer ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE
+hi NeoTreeNormal ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE
+hi NeoTreeNormalNC ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE
+hi NeoTreePreview ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE
+hi NeoTreeExpander ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE
 
 let $FZF_DEFAULT_COMMAND = 'rg --glob="!.git/*" --hidden -l ""'
 
@@ -26,3 +31,11 @@ let g:prettier#autoformat_require_pragma = 0
 let g:prettier#autoformat_config_present = 1
 let g:prettier#quickfix_auto_focus = 0
 let g:prettier#quickfix_enabled = 0
+
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set nofoldenable
+
+set laststatus=3
+
+let g:neoformat_try_node_exe = 1

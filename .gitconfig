@@ -5,7 +5,12 @@
 	email = jrsalazar.dev@hey.com
 	signingKey = 5FD3B7F6FEA0B5BA
 [push]
-	default = simple
+	default = current
+	autoSetupRemote = true
+	autoSetupRemote = true
+	autoSetupRemote = true
+	autoSetupRemote = true
+	default = current
 [core]
 	excludesfile = /Users/jrs/.gitignore
 	pager = delta
@@ -24,8 +29,17 @@
 	plus-style = syntax "#162b1a"
 [commit]
 	gpgsign = true
+[alias]
+	pickable = log --oneline --cherry-pick --right-only --reverse
 [versionsort]
 	suffix = "-alpha"
 	suffix = "-beta"
 	suffix = "-rc"
 	suffix = ""
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[maintenance]
+	repo = /Users/jordansalazar/www/grandvision/gv-core-components

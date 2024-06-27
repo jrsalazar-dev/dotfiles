@@ -1,10 +1,8 @@
 
-vim.cmd 'source ~/.config/nvim/lua/variables.vim'
 
-vim.g.dracula_transparent_bg = true
-vim.g.dracula_colors = {
-  bg = "NONE",
-}
+vim.cmd[[colorscheme dracula]]
+
+vim.cmd 'source ~/.config/nvim/lua/variables.vim'
 
 require('opts')
 require('plugins')

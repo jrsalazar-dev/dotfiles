@@ -1,4 +1,4 @@
-local Utils = require("utils")
+local Utils = require("config.utils")
 
 -- local exprnnoremap = Utils.exprnnoremap
 local nnoremap = Utils.nnoremap

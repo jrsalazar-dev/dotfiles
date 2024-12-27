@@ -1,5 +1,3 @@
-# CodeWhisperer pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
 # Correctly display UTF-8 with combining characters.
 setopt combiningchars
 setopt auto_cd
@@ -164,6 +162,7 @@ alias t='task'
 ## Misc
 alias l='ls --color -lah --group-directories-first'
 alias o='open'
+alias n='next'
 alias mv='mv -v'
 alias cp='cp -Rv'
 alias bc='bc -l'
@@ -296,8 +295,3 @@ export forgit_cherry_pick=gcpc
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-[ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh
-
-# CodeWhisperer post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"

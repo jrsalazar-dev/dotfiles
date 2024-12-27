@@ -1,5 +1,3 @@
-local vim = vim
-
 -- vim.cmd([[ autocmd ColorScheme * :lua require('vim.lsp.diagnostic')._define_default_signs_and_highlights() ]])
 
 -- vim.cmd([[
@@ -9,6 +7,7 @@ local vim = vim
 --   augroup END
 -- ]])
 
+-- Ignore yaml due to GrandVision unformatted env files
 vim.cmd([[
   augroup fmtWrite
     autocmd!

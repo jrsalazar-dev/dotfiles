@@ -1,5 +1,5 @@
 return {
-	-- Finders
+	-- FZF Plugins
 	{ "junegunn/fzf", build = "./install --bin", lazy = false },
 	{
 		"ibhagwan/fzf-lua",
@@ -16,6 +16,7 @@ return {
 		},
 	},
 	{
+		-- Automatically uses FZF for all LSP multiple choice prompts
 		"gfanto/fzf-lsp.nvim",
 	},
 }

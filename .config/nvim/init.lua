@@ -2,7 +2,7 @@ vim.cmd([[colorscheme dracula]])
 
 vim.cmd("source ~/.config/nvim/lua/variables.vim")
 
-require("bootstrap")
+require("bootstrap-lazy")
 require("config.options")
 require("config.keymaps")
 

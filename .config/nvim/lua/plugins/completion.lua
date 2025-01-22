@@ -62,9 +62,12 @@ return {
 
 			completion = {
 				list = {
-					selection = function(ctx)
-						return ctx.mode == "cmdline" and "manual" or "preselect"
-					end,
+					selection = {
+						preselect = function(ctx)
+							return ctx.mode ~= "cmdline"
+						end,
+						auto_insert = true,
+					},
 				},
 				documentation = {
 					auto_show = true,

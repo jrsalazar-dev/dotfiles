@@ -72,11 +72,12 @@ return {
 	{ "editorconfig/editorconfig-vim" },
 	{
 		"iamcco/markdown-preview.nvim",
-		build = "cd app && npm install",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		build = "cd app && yarn install",
 		init = function()
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
-		ft = "markdown",
+		ft = { "markdown" },
 	},
 	{ "christoomey/vim-tmux-navigator" },
 	-- { "APZelos/blamer.nvim" },

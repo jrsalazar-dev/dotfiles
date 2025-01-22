@@ -17,6 +17,7 @@ vim.g.maplocalleader = " "
 nnoremap("<leader>s", ":w<CR>")
 -- nnoremap("<leader>w", ":wq<CR>")
 nnoremap("<leader>q", ":qa!<CR>")
+nnoremap("<leader>w", ":wq<CR>")
 nnoremap("<leader>h", ":noh<CR>")
 
 nnoremap("<leader>tn", ":TestNearest<cr>")

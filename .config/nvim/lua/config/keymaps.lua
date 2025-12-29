@@ -14,10 +14,11 @@ vim.g.maplocalleader = " "
 
 -- nnoremap("<space>", "/")
 
+nnoremap("<leader>p", "\"0p")
 nnoremap("<leader>s", ":w<CR>")
--- nnoremap("<leader>w", ":wq<CR>")
 nnoremap("<leader>q", ":qa!<CR>")
 nnoremap("<leader>w", ":wq<CR>")
+nnoremap("<leader>nf", ":Neoformat<CR>")
 nnoremap("<leader>h", ":noh<CR>")
 
 nnoremap("<leader>tn", ":TestNearest<cr>")
@@ -52,6 +53,32 @@ nnoremap("*", "*zz")
 nnoremap("#", "#zz")
 
 nnoremap("\\", ":Neotree reveal<CR>")
+
+nnoremap("<leader>dc", "<CMD>require('dap').continue()<CR>")
+nnoremap("<leader>ds", "<CMD>require('dap').step_over()<CR>")
+nnoremap("<leader>db", "<CMD>require('dap').toggle_breakpoint()<CR>")
+nnoremap("<leader>dr", "<CMD>require('dap').repl.open()<CR>")
+
+-- vim.keymap.set('n', '<leader>dc', function() require('dap').continue() end)
+-- vim.keymap.set('n', '<leader>ds', function() require('dap').step_over() end)
+-- vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
+-- vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
+-- vim.keymap.set('n', '<leader>db', function() require('dap').toggle_breakpoint() end)
+-- vim.keymap.set('n', '<leader>dl', function() require('dap').run_last() end)
+-- vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
+--   require('dap.ui.widgets').hover()
+-- end)
+-- vim.keymap.set({'n', 'v'}, '<Leader>dp', function()
+--   require('dap.ui.widgets').preview()
+-- end)
+-- vim.keymap.set('n', '<Leader>df', function()
+--   local widgets = require('dap.ui.widgets')
+--   widgets.centered_float(widgets.frames)
+-- end)
+-- vim.keymap.set('n', '<Leader>ds', function()
+--   local widgets = require('dap.ui.widgets')
+--   widgets.centered_float(widgets.scopes)
+-- end)
 
 vim.cmd([[  au TextYankPost * silent! lua vim.highlight.on_yank() ]])
 

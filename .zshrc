@@ -62,7 +62,7 @@ export GEM_HOME=~/.gem
 export GEM_PATH=~/.gem
 
 export EDITOR='nvim'
-export PATH="/opt/homebrew/opt/ruby@2.7/bin:./vendor/bundle/ruby/bin:$HOME/.bin:$HOMEBREW_PREFIX/bin:$HOME/Library/Python/3.9/bin:/usr/local/opt/openjdk@8/bin:./node_modules/.bin:$$HOME/.config/composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$GEM_HOME/bin:$HOME/.node_modules/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/bin:./vendor/bin:/usr/sbin/:/Library/TeX/texbin:$HOME/.local/bin:$HOME/go/bin"
+export PATH="/Applications/Docker.app/Contents/Resources/bin:opt/homebrew/opt/ruby@2.7/bin:./vendor/bundle/ruby/bin:$HOME/.bin:$HOMEBREW_PREFIX/bin:$HOME/Library/Python/3.9/bin:/usr/local/opt/openjdk@8/bin:./node_modules/.bin:$$HOME/.config/composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$GEM_HOME/bin:$HOME/.node_modules/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:/bin:./vendor/bin:/usr/sbin/:/Library/TeX/texbin:$HOME/.local/bin:$HOME/go/bin:$HOME/.rover/bin"
 export COWPATH="$HOME/.cowsay"
 export ZDOTDIR="$HOME"
 
@@ -295,3 +295,12 @@ export forgit_cherry_pick=gcpc
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias claude="/Users/jordansalazar/.claude/local/claude"
+
+# export ANTHROPIC_BASE_URL="https://openrouter.ai/api/v1"
+export ANTHROPIC_BASE_URL="https://api.z.ai/api/anthropic"
+# Z.Ai direct key
+export ZAI_TOKEN="$(cat ~/.zai_token)"
+export ANTHROPIC_AUTH_TOKEN="$ZAI_TOKEN"
+export ANTHROPIC_MODEL="glm-4.6"

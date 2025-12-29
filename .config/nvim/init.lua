@@ -1,10 +1,10 @@
-vim.cmd([[colorscheme dracula]])
-
 vim.cmd("source ~/.config/nvim/lua/variables.vim")
 
 require("bootstrap-lazy")
 require("config.options")
 require("config.keymaps")
+
+vim.cmd([[colorscheme dracula]])
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),

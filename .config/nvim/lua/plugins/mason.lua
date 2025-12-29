@@ -29,11 +29,6 @@ return {
 		},
 		config = function(opts)
 			require("mason-lspconfig").setup(opts)
-			require("mason-lspconfig").setup_handlers({
-				function(server_name)
-					require("lspconfig")[server_name].setup({})
-				end,
-			})
 		end,
 	},
 	{
@@ -47,6 +42,8 @@ return {
 			},
 		},
 	},
+	-- { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
+
 	{ "neovim/nvim-lspconfig" },
 	-- { "mfussenegger/nvim-lint" },
 	{ "onsails/lspkind-nvim" },

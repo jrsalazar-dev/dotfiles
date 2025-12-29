@@ -8,12 +8,12 @@
 -- ]])
 
 -- Ignore yaml due to GrandVision unformatted env files
-vim.cmd([[
-  augroup fmtWrite
-    autocmd!
-    autocmd BufWritePre * if &filetype != 'yaml' | Neoformat | endif
-  augroup END
-]])
+-- vim.cmd([[
+--   augroup fmtWrite
+--     autocmd!
+--     autocmd BufWritePre * if &filetype != 'yaml' | Neoformat | endif
+--   augroup END
+-- ]])
 
 vim.opt.confirm = false
 -- vim.opt.nofoldenable = true
